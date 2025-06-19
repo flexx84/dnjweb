@@ -1,0 +1,239 @@
+@charset "utf-8";
+/* *******************************************************
+ * filename : main.css
+ * description : 메인 레이아웃 및 컨텐츠 CSS
+ * date : 2022-06-08
+******************************************************** */
+
+/* ******************  메인 레이아웃(Fullpage) ********************** */
+#fullpage #mainVisual{height:100vh}
+#fullpage .section{background-color:#fff;}
+@media all and ( min-width: 1281px ) and (max-height: 750px) {
+	#fullpage .section:not(#mainFooter){min-height:750px;}
+	#fullpage .section .fp-tableCell{height:100% !important;}
+}
+
+/* ******************  메인 비주얼 ********************** */
+#mainVisual{overflow:hidden; width:100%; height:100vh; position:relative; background-color:#000 }
+.main-visual-con .slick-track,
+.main-visual-con .slick-list {
+	 -webkit-perspective: 2000;
+	-webkit-backface-visibility: hidden;
+}
+.main-visual-con, 
+.main-visual-con .slick-list,  
+.main-visual-con .slick-track, 
+.main-visual-item{
+	height:100%;
+}
+.main-visual-con{z-index:1;}
+/* 메인 비주얼 :: 이미지 */
+.main-visual-item{/* position:absolute !important; left:0 !important */}
+.main-visual-item .main-visual-img{
+	width:100%;
+	height:100%;
+	background-size:cover !important;
+	transform: scale(1.08,1.08);
+}
+.main-visual-item .main-visual-m-img{display:none;}
+.main-visual-item.active-item .main-visual-img{
+    animation: image-zoom-out 8s 0s forwards;
+}
+
+/* 메인 비주얼 :: 텍스트 */
+.main-visual-txt-con{
+	position:absolute; 
+	left:0px; top:24.5rem;
+	width:100%; 
+	height:100%;
+	z-index:1;
+}
+.main-visual-txt-box{
+	display:flex;
+	justify-content:flex-end;
+	text-align:right;
+	padding-right:8rem;
+	box-sizing:border-box;
+}
+.main-visual-txt-inner{
+	position:relative;
+	width:100%;
+}
+.main-visual-txt-con .main-visual-company-name{display:block; padding-right:0.5rem; color:#f6f6f6; font-size:2rem; letter-spacing:-0.5px; font-weight:600; margin-bottom:2.5rem;}
+.main-visual-slogan-rolling .slick-list{overflow:visible;}
+.main-visual-slogan-rolling .slick-track{width:auto !important;}
+.main-visual-slogan-rolling .main-visual-slogan-item{position:absolute !important; left:auto !important; right:0 !important; width:auto !important; opacity:0;}
+.main-visual-slogan-rolling .main-visual-slogan{font-size:7rem; font-weight:500; letter-spacing:-0.35px; color:#fff; line-height:1.5}
+.main-visual-slogan-rolling .main-visual-slogan b{font-weight:700;}
+.main-visual-slogan-rolling .main-visual-slogan .middle-dot{display:inline-block; margin:0 2.2rem}
+.main-visual-slogan-rolling .main-visual-slogan .middle-dot .word{width:17px; text-align:center;}
+
+/* 메인 비주얼 :: active효과 */
+.active .main-visual-company-name .char{
+	opacity:1;
+	-webkit-animation: text-active-animation 1.5s cubic-bezier(0.4, 0, 0.2, 1) both;
+	animation: text-active-animation 1.5s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+.active-item .cm-word-split-JS.splitting .char{
+	-webkit-animation: text-active-animation 1.5s cubic-bezier(0.4, 0, 0.2, 1) both;
+	animation: text-active-animation 1.5s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+@keyframes image-zoom-out {
+	from {
+		transform: scale(1.08,1.08)
+	}
+	to {
+		transform: scale(1.0,1.0)
+	}
+}
+@keyframes text-active-animation {
+	from {
+		opacity:0;filter:Alpha(opacity=0);
+		-webkit-transform: translateY(50px); 
+		transform: translateY(50px); 
+	}
+	to {
+		opacity:1.0;filter:Alpha(opacity=100);
+		-webkit-transform: translateY(0); 
+		transform: translateY(0); 
+	}
+}
+@keyframes text-fade-out {
+	from {
+		opacity:1.0;filter:Alpha(opacity=100);
+	}
+	to {
+		opacity:0;filter:Alpha(opacity=0);
+	}
+}
+
+/* ******************  메인 컨텐츠 ********************** */
+/* -------- 메인 컨텐츠 :: 공통 -------- */
+/* 공통 :: 타이틀 */
+.main-tit-box .main-tit{color:#000; font-size:6.5rem; font-weight:700; letter-spacing:-0.0076em; line-height:1.153;}
+.main-tit-box .category{display:block; font-size:1.72rem; font-weight:700; letter-spacing:0; margin-bottom:2.7rem; color:var(--main-color)}
+.main-more-btn{display:flex; align-items:center; font-size:1.4rem; font-weight:500; color:#000; transition:all 0.3s}
+.main-more-btn.mar-top{margin-top:12rem}
+.main-more-btn em{font-weight:inherit; margin-right:1.64em;}
+.main-more-btn i{font-size:1.71em; color:inherit; transition:all 0.3s}
+@media all and ( hover:hover ){
+	.main-more-btn:hover,
+	a:hover .main-more-btn{color:var(--main-color);}
+	.main-more-btn:hover i,
+	a:hover .main-more-btn i{transform:translateX(10px)}
+}
+
+/* -------- 메인 컨텐츠 :: 포트폴리오 리스트 -------- */
+.main-project-container{position:relative; display:flex; }
+.main-project-container .main-tit-box{width:42.2rem; padding-top:4.5rem}
+.main-project-container .main-project-list-con{width:calc(100% - 42.2rem);}
+.main-project-container .main-project-rolling-wrapper{margin-right:-10.4167vw}
+/* 메인 포트폴리오 :: List */
+.main-project-rolling-list-con{margin:0;}
+.main-project-rolling-list-con .project-item{width:40rem; margin:0 !important; padding-right:5.3rem}
+.main-project-rolling-list-con .project-item:last-child{padding-right:0;}
+/* 메인 포트폴리오 :: Swiper Controls */
+.main-news-swiper-controls {position:absolute; bottom:-100px; left:2.6rem; right:7rem; display:flex; justify-content:space-between; align-items:center; }
+.main-news-swiper-controls .swiper-scrollbar {display:block !important; position:relative; width:calc(100% - 16rem); height:3px; background-color:#ededed; }
+.main-news-swiper-controls .swiper-scrollbar-drag {height:3px; background-color:#424242; cursor:pointer;}
+.main-news-swiper-controls i {font-size:2.24rem; color: #000;}
+.main-news-swiper-controls .swiper-button-disabled{opacity:0.25; cursor:default;}
+
+/* -------- 메인 컨텐츠 :: 사업영역 리스트 -------- */
+#mainBusinessContent.section{position:relative; background-color:transparent;}
+.business-bg-list-con{position:absolute; top:0px; left:0px; width:100%; height:100%;}
+.business-bg-list-con > li{position:absolute; top:0px; left:0px; width:100%; height:100%; opacity:0; z-index:0; transition:opacity 1s linear}
+.business-bg-list-con > li.business-bg-development{background:url(../images/main_business_bg_develope.jpg) no-repeat 50% 50%; background-size:cover; }
+.business-bg-list-con > li.business-bg-city{background:url(../images/main_business_bg_city.jpg) no-repeat 50% 50%; background-size:cover;}
+.business-bg-list-con > li.business-bg-consulting{background:url(../images/main_business_bg_consulting.jpg) no-repeat 50% 50%; background-size:cover;}
+.business-bg-list-con > li.business-bg-lifestyle{background:url(../images/main_business_bg_lifestyle.jpg) no-repeat 50% 50%; background-size:cover;}
+.business-bg-list-con > li.business-bg-new{background:url(../images/main_business_bg_new.jpg) no-repeat 50% 50%; background-size:cover;}
+.business-bg-list-con > li.active{z-index:1; opacity:1;}
+#mainBusinessContent .dim-bg{position:absolute; top:0px; right:0px; background-color:#000; width:50%; height:100%; opacity:0.78; z-index:2;}
+#mainBusinessContent .area-box{position:relative; z-index:2;}
+.main-business-container{position:relative; width:50%; margin-left:50%;}
+.main-business-container .main-tit-box{text-align:right;}
+.main-business-container .main-tit-box .main-tit{color:#fff;}
+.main-business-area{display:flex; justify-content:flex-end; margin-top:7.5rem }
+.main-business-list-con{width:55.8rem; display:flex; flex-wrap:wrap;}
+.business-intro-item{width:calc(33.33% - 1px); margin:0.5px}
+.business-intro-item .business-item-inner{display:flex;  height:20rem; flex-direction: column; align-items: center; justify-content: center; background-color:#5b6167; color:#fff; transition:all 0.3s ease;}
+.business-intro-item .icon,
+.business-intro-item .tit{transition:all 0.3s ease;}
+.business-intro-item .icon{opacity:0.25}
+.business-intro-item .icon img{height:6.3rem; image-rendering:-webkit-optimize-contrast; }
+.business-intro-item.logo .icon img{height:9.2rem}
+.business-intro-item .tit{display:block; opacity:0.75; color:#fff; font-size:1.78rem; letter-spacing:-0.75px; font-weight:500; margin-top:2rem;}
+.business-intro-item:not(.logo):hover,
+.business-intro-item:not(.logo).active{position:relative;}
+.business-intro-item:not(.logo):hover .business-item-inner,
+.business-intro-item:not(.logo).active .business-item-inner{box-shadow: 9px 15px 24px 0px rgba(0, 0, 0, 0.5);}
+.business-intro-item:not(.logo) .business-item-inner:hover,
+.business-intro-item:not(.logo).active .business-item-inner{background-color:var(--main-color); }
+.business-intro-item:not(.logo) .business-item-inner:hover .icon,
+.business-intro-item:not(.logo) .business-item-inner:hover .tit,
+.business-intro-item.active .business-item-inner .icon,
+.business-intro-item.active .business-item-inner .tit{opacity:1.0;}
+
+/* -------- 메인 컨텐츠 :: 뉴스 -------- */
+#mainNewsContent{background:url(../images/main_news_bg.jpg) no-repeat 100% 50%; background-size:cover;}
+.main-news-container .main-tit-box{position:relative;margin-bottom:8.5rem;}
+.main-news-list-controls{position:absolute; bottom:0px; right:0px;}
+.main-news-list-controls button{font-size:3.3rem; color:#000;}
+.main-news-list-controls .main-news-next-btn{margin-left:4.7rem}
+.main-news-list-controls .slick-disabled{opacity:0.25}
+.main-news-list-con .news-item{margin-bottom:0}
+.main-news-list-con .news-item .news-item-inner{background-color:transparent; border-top:3px solid #3c3c3c;}
+@media all and (min-width:801px){
+	.main-news-list-con{margin-top:30px}
+	.main-news-list-con .slick-track{padding-bottom:30px;}
+}
+
+/* -------- 메인 컨텐츠 :: 포트폴리오 리스트 -------- */
+#mainRecruitContactContent{}
+/* Recruit*/
+.main-recruit-container{height:calc(100% - 34.3rem); display:flex; align-items:center;}
+.main-recruit-con{width:100%; background-color:#80655A; margin-top:calc(var(--header-height)/2)}
+.main-recruit-con .main-recruit-link{display:block; float:left; width:50%; height:33.7rem; box-sizing:border-box; padding:8.2rem 8.8rem; color:#fff; }
+.main-recruit-con .main-tit-box .main-tit{font-size:4.4rem; line-height:1.16; color:inherit; margin-bottom:1.4rem;}
+.main-recruit-con .main-tit-box .recruit-main-txt{letter-spacing:-0.36px; font-size:1.8rem; line-height:1.5; opacity:0.65; }
+.main-recruit-con .main-tit-box .main-more-btn{color:#fff; margin-top:4.5rem}
+.main-recruit-con .main-recruit-bg{float:left; width:50%; height:33.7rem;}
+.main-recruit-con .main-recruit-bg img{width:100%; height:100%; object-fit:cover;}
+.main-recruit-con .main-recruit-link:hover + .main-recruit-bg img{
+		-ms-transform: scale(1.1) rotate(0.002deg);
+	  -o-transform: scale(1.1) rotate(0.002deg);
+	  -moz-transform: scale(1.1) rotate(0.002deg);
+	  -webkit-transform: scale(1.1) rotate(0.002deg);
+	  transform: scale(1.1) rotate(0.002deg);
+}
+/* Contact*/
+.main-contact-container{position:relative; overflow:hidden;height:34.3rem; display:flex; align-items:center; justify-content:center;  }
+.main-contact-container .main-contact-bg{
+	position:absolute; top:0px; left:0px; width:100%; height:100%; 
+	overflow:hidden; 
+	background:url(../images/main_contact_bg.jpg) no-repeat 50% 50%; 
+	background-size:cover; 
+	-webkit-transition:transform 0.6s;
+	-moz-transition:transform 0.6s;
+	-o-transition:transform 0.6s;
+	-ms-transition:transform 0.6s;
+	transition:transform 0.6s
+}
+.main-contact-container:hover .main-contact-bg{
+	-ms-transform: scale(1.1) rotate(0.002deg);
+	  -o-transform: scale(1.1) rotate(0.002deg);
+	  -moz-transform: scale(1.1) rotate(0.002deg);
+	  -webkit-transform: scale(1.1) rotate(0.002deg);
+	  transform: scale(1.1) rotate(0.002deg);
+}
+.main-contact-inner{display:inline-flex; align-items:center; justify-content:center; flex-direction:column; position:relative; text-align:center; color:#fff;}
+.main-contact-inner p{font-size:1.8rem; opacity:0.65; }
+.main-contact-inner .main-tit{font-size:5rem; margin-bottom:3.1rem;}
+.main-contact-inner .contact-address-txt{margin-bottom:1.6rem}
+.contact-address .contact-address-txt{margin:0 -1rem;}
+.contact-address p{display:inline-block; vertical-align:middle; position:relative; margin:0 1rem;}
+.contact-address p:before{position:absolute; top:50%; left:-1.1rem; width:1px; height:10px; margin-top:-5px; background-color:#fff; content:""; opacity:0.4}
+.contact-address p:first-child:before{display:none;}
+.contact-address a{color:inherit}
+

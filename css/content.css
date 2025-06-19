@@ -1,0 +1,435 @@
+@charset "utf-8";
+/* *******************************************************
+ * filename : content.css
+ * description : 서브페이지 컨텐츠 CSS
+ * date : 2022-03-14
+******************************************************** */
+
+/* ******************  서브공통 ********************** */
+/* -------- 공통 스크롤바  -------- */
+.custom-scrollbar-cover,
+.cm-scroll-drag-guide{display:none;}
+
+/* -------- 공통 :: 탭 -------- */
+/* Tab 공통 스타일 */
+.sub-tab-wrapper-style{position:relative; height:60px; margin-bottom:15px; }
+.sub-tab-list-style ul{display:table; width:100%; height:100%; table-layout:fixed;}
+.sub-tab-list-style ul:after{display:none}
+.sub-tab-list-style ul li{/* float:left; */ display:table-cell; vertical-align:middle; position:relative; width:20%; background-color:#fff; border:1px solid #e5e5e5; border-left:0 }
+.sub-tab-list-style ul li:first-child{border-left:1px solid #e5e5e5;}
+.sub-tab-list-style ul li a{display:table; height:58px; width:100%; }
+.sub-tab-list-style ul li a em{display:table-cell; vertical-align:middle; color:#494949; font-size:18px; letter-spacing:-0.30px; text-align:center;}
+.sub-tab-list-style ul li.selected{z-index:1; }
+.sub-tab-list-style ul li.selected a{background-color:#333; border-color:#333}
+.sub-tab-list-style ul li.selected a em{color:#fff; }
+/* Tab Fixed Move*/
+.sub-tab-list-style.top-fixed{position:fixed; top:70px; left:0; width:100%; height:60px;}
+/* Mobile Tab Drop Menu */
+.sub-drop-open-btn-style{display:none}
+
+@media all and (min-width:1025px){
+	/* Tab Fixed Background */
+	.sub-tab-list-style:before{position:absolute; top:0px; bottom:0px; left:50%; width:0; content:""; background-color:#fff; border-bottom:1px solid #e5e5e5; transition:all 0.5s}
+	.sub-tab-list-style.top-fixed:before{width:100%; margin-left:-50%}
+}
+
+/* ========================================================
+ * ABOUT
+======================================================== */
+/* ******************  ABOUT :: CEO ********************** */
+.about-greeting-container{display:flex; justify-content:space-between; flex-direction:row-reverse; }
+.about-greeting-img-con{width:50%; box-sizing:border-box; padding-right:10rem}
+.about-greeting-img-con span{position:relative; display:block; height:0; padding-top:135%; }
+.about-greeting-img-con img{position:absolute;top:0px; left:0px; height:100%; width:100%;}
+.about-greeting-txt-con{width:50%;}
+.greeting-top-txt-con{margin-bottom:5rem}
+.greeting-top-txt-con span{display:block; font-size:1.72rem; font-weight:700; color:var(--main-color); margin-bottom:3.5rem}
+.greeting-top-txt-con strong{display:block; font-size:5rem; font-weight:700; color:#333; letter-spacing:-0.23rem;line-height:1.2;}
+.gretting-txt-con{font-size:1.72rem; letter-spacing:-0.035em; line-height:2.2;}
+.gretting-txt-con .ceo-name{display:block; font-size:1.29em; letter-spacing:-0.022em; color:#000; margin-top:1.6em}
+.ceo-name img{width:35.76%; max-width:236px;}
+
+/* ******************  ABOUT :: 철학 ********************** */
+.philo-tit{font-size:5.6rem; letter-spacing:-0.017em; color:#333; text-align:center; font-weight:400; margin-bottom:12rem}
+.philo-tit b{font-weight:700;}
+.about-philosophy-container{max-width:var(--area-box-width); margin:0px auto; padding:0 5rem; box-sizing:border-box;}
+.philo-detail-item{display:flex; align-items:center; margin-bottom:19rem}
+.philo-detail-item .philo-img-con{position:relative; width:50%;}
+.philo-detail-item .philo-img-con:before{position:absolute; bottom:0; left:0; width:100%; height:100%; background:url(../images/about_vision_bg.jpg) no-repeat ; content:"";}
+.philo-detail-item .philo-img-con img{max-width:100%; position:relative; z-index:1; box-shadow:2.3rem 2.3rem 4.6rem 0px rgba(0, 0, 0, 0.11);}
+.philo-detail-item .philo-detail-con{width:50%; box-sizing:border-box; padding-left:9rem}
+.philo-detail-item .philo-detail-con dt{color:#000; font-size:3.6rem; letter-spacing:-0.016em; font-weight:600; margin-bottom:5rem;}
+.philo-detail-item .philo-detail-con dt span{color:var(--main-color); font-size:0.472em; letter-spacing:0px; font-weight:700; margin-left:1em;}
+.philo-detail-item .philo-detail-con dd .philo-txt-tit{display:block; color:#333; font-size:2.1rem; letter-spacing:-0.028em; margin-bottom:1em;}
+.philo-detail-item .philo-detail-con dd .philo-txt{color:#555; font-size:1.8rem; letter-spacing:-0.033em; line-height:1.888em; }
+@media all and (min-width:801px){
+	/* reverse */
+	.philo-detail-item.reverse{flex-direction:row-reverse;}
+	.philo-detail-item.reverse .philo-detail-con{padding-left:5rem; padding-right:2em}
+	.philo-detail-item:not(.reverse) .philo-img-con:before{transform:translate(-5rem, 5rem)}
+	.philo-detail-item.reverse .philo-img-con:before{transform:translate(5rem, 5rem)}
+}
+
+/* ******************  ABOUT :: Contact ********************** */
+.contact-top-con{position:relative; margin-bottom:8rem}
+.contact-top-con h4{color:#333; font-size:3.5rem; letter-spacing:-0.014em; margin-bottom:5rem;}
+.contact-top-con .contact-address-con{display:flex; align-items:center; flex-wrap:wrap; font-size:1.75rem; letter-spacing:-0.0342em;}
+.contact-top-con .contact-address-con dl {display:flex; align-items:center; margin:0.7rem 7rem 0.7rem 0; line-height:1.2}
+.contact-top-con .contact-address-con dl dt{width:4.8rem; color:#70563f; font-weight:500;}
+.contact-top-con .contact-address-con dl dd{width:calc(100% - 4.8rem)}
+.contact-top-con .contact-map-btns{position:absolute; bottom:0px; right:0px;}
+.contact-top-con .contact-map-btns a{display:inline-flex; align-items:center; width:20.4rem; justify-content:center; height:5.5rem; margin-left:1.5rem; font-size:1.6rem; letter-spacing:-0.031em; color:#323232; border:1px solid #323232; transition:all 0.3s}
+.contact-top-con .contact-map-btns a:first-child{margin-left:0;}
+.contact-top-con .contact-map-btns a:hover{background-color:#323232; color:#fff;}
+
+/* ========================================================
+ * BRAND
+======================================================== */
+#brandContent1{background:url(../images/brand_section_01_bg.jpg) no-repeat 25% 50%; background-size:cover;}
+#brandContent2{background:url(../images/brand_section_02_bg.jpg) no-repeat 65% 50%; background-size:cover;}
+.brand-container .fp-tableCell{vertical-align:top; }
+.brand-container .area-box{padding-top:22.6vh}
+.brand-container .brand-txt{color:var(--main-color); font-size: 2rem; font-weight: 500; line-height: 1.7; margin-top:3.4rem;}
+.brand-container .brand-txt:first-child{margin-top:0;}
+.brand-container .brand-img{display: block; margin-top:8.4rem;}
+.brand-spec-list-con{display:flex; height:100%; }
+.brand-spec-list-con .brand-spec-item{overflow:hidden; position:relative; width:25%; height:100%;}
+.brand-spec-list-con .brand-spec-item .spec-bg{
+	width:100%; height:100%; 
+	-webkit-transition:transform 0.6s;
+	-moz-transition:transform 0.6s;
+	-o-transition:transform 0.6s;
+	-ms-transition:transform 0.6s;
+	transition:transform 0.6s;
+	background-size:cover !important;
+}
+.brand-spec-list-con .brand-spec-item:hover .spec-bg{
+	-ms-transform: scale(1.1) rotate(0.002deg);
+	  -o-transform: scale(1.1) rotate(0.002deg);
+	  -moz-transform: scale(1.1) rotate(0.002deg);
+	  -webkit-transform: scale(1.1) rotate(0.002deg);
+	  transform: scale(1.1) rotate(0.002deg);
+}
+.brand-spec-list-con .brand-spec-item .spec-tit-con{position:absolute; bottom:0px; left:6.7rem; right:6.7rem; }
+.brand-spec-list-con .brand-spec-item .spec-tit-con dt{margin-bottom:-2px}
+.brand-spec-list-con .brand-spec-item .spec-tit-con dd{display:flex; align-items:center; justify-content:center; width:100%; height:10.6rem; background-color: rgb(141, 111, 73); font-size:1.8rem; letter-spacing:0.15em; color:#fff; }
+.brand-spec-list-con .brand-spec-01 .spec-bg{background:url(../images/brand_section_bg_place.jpg) no-repeat 50% 50%}
+.brand-spec-list-con .brand-spec-02 .spec-bg{background:url(../images/brand_section_bg_structure.jpg) no-repeat 50% 50%}
+.brand-spec-list-con .brand-spec-03 .spec-bg{background:url(../images/brand_section_bg_detail.jpg) no-repeat 50% 50%}
+.brand-spec-list-con .brand-spec-04 .spec-bg{background:url(../images/brand_section_bg_experience.jpg) no-repeat 50% 50%}
+
+/* 메인 비주얼 :: 스크롤아이콘 */
+.scroll-wrap{position:absolute; bottom:4.5rem; width:100%;}
+.main-scroll-icon{position:absolute; left:50%; transform:translateX(-50%); text-align:center; z-index:9; transition:all 0.6s cubic-bezier(0.47, 0, 0.745, 0.715);}
+.main-scroll-icon em{float:left; padding-left: 2rem; font-size: 3rem; font-weight: 400; letter-spacing: 0.19rem; color: #fff; line-height: 3.2rem; margin-right:3rem; opacity:1; animation:mouseScroll 1.8s infinite; animation-delay:2s; transition:all 0.3s;}
+@keyframes mouseScroll {
+  0% {
+		opacity: 1;
+		transform:  translateY(-5px);
+	}
+	50% {
+		opacity: 0;
+		transform: translateY(-20px);
+	}
+	100% {
+		opacity: 1;
+		transform:  translateY(-5px);
+	}
+}
+
+/* ========================================================
+ * BUSINESS
+======================================================== */
+/* ******************  Business :: 공통 ********************** */
+/* Business 타이틀박스 */
+.business-tit-box{text-align:center; margin-bottom:7.8rem;}
+.business-tit-box .tit-en{font-size:1.7rem; color:var(--main-color);}
+.business-tit-box .tit{font-size:5.45rem; line-height:1.23; letter-spacing:-0.05rem; color:#373737; font-weight:400; margin-top:1.8rem;}
+
+/* Business :: 개발사업 - 배너 */
+.business-con .banner-box{position: relative; width:100%; height:0; padding-top:22.86%; margin-bottom:9rem;}
+.business-con .banner-box span{display: block; position: absolute; top:0; left:0; width:100%; height:100%; background:no-repeat center; background-attachment: fixed; background-size:cover;}
+.develop-page .business-con .banner-box{margin-bottom:1.5rem;}
+.develop-page .business-con .banner-box span{background-image:url('../images/business_develop_banner.jpg');}
+
+/* ******************  Business :: 개발사업 ********************** */
+/* Business :: 개발사업 - con01 */
+.develop-page .con01{margin-bottom:9.6rem;}
+.develop-list-wrap{display: flex; flex-wrap:wrap;}
+.develop-list-wrap li{position: relative; width:50%; border-bottom:1px solid #ddd; padding:7.5rem; box-sizing:border-box;}
+.develop-list-wrap li:nth-child(n+3){border-bottom:0;}
+.develop-list-wrap li:nth-child(even){padding:7.5rem 0;}
+.develop-list-wrap li .img-box{position: absolute; top:50%; left:7.5rem; transform:translateY(-50%); text-align:left;}
+.develop-list-wrap li:nth-child(even) .img-box{left:0;}
+.develop-list-wrap li .info-box{padding-left:15rem;}
+.develop-list-wrap li .info-box .info-tit{font-size:2.65rem; line-height:1.57; letter-spacing:-0.025rem; color:#333; font-weight:700; margin-bottom:1.5rem;}
+.develop-list-wrap li .info-box .info-txt{font-size:1.7rem; line-height:1.88; letter-spacing:-0.06rem; color:#777;}
+
+/* Business :: 개발사업 - con02 */
+.develop-page .con02{margin-bottom:14.7rem;}
+
+/* Business :: 개발사업 - 아코디언 */
+.accordion-list-box{max-width:1600px;}
+.accordion-list .accordion-item{position:relative; overflow:hidden;  }
+.accordion-list .accordion-item .accordion-inner{display:block; position:relative; height:100%; margin:0; cursor:pointer;}
+.accordion-list .accordion-item .accordion-inner:before{position: absolute; content:''; width:100%; height:100%; top:0; left:0; background:#000; opacity:0.7}
+.accordion-list .accordion-item.active .accordion-inner:before{opacity:0.25;}
+@media all and ( min-width: 1367px ){
+	.accordion-list-box .accordion-list{height:670px}
+	.accordion-list .accordion-item{width:250px;}
+}
+@media all and ( min-width: 801px ){
+	.accordion-list-box .accordion-list{ display: table; width:100%; height: 566px; white-space:nowrap; overflow:hidden; font-size:0;}
+	.accordion-list .accordion-item{width:180px; display:table-cell; height:100%; white-space:nowrap;} /* 접힌 li의 width*/
+	.accordion-list .accordion-item .accordion-m-img{display:none;}
+}
+/* 아코디언  :: 타이틀 및 내용 */
+.accordion-item .accordion-inner .accordion-tit{
+	position:absolute;
+	width:100%; 
+	text-align:center; 
+	z-index:1;
+	opacity:1.0;filter:Alpha(opacity=100);
+	transition:all 0.3s;
+	top:50px;
+	text-shadow:1px 1px 1px rgba(0,0,0,0.2);
+}
+.accordion-item .accordion-inner .accordion-tit span{font-size:2.05rem; line-height:1.5; letter-spacing:-0.05rem; color:var(--main-color); font-weight:500;}
+.accordion-item .accordion-inner .accordion-tit h5{font-size:2.2rem; letter-spacing:-0.2rem; color:#fff; font-weight:400; margin-top:2rem; writing-mode:tb-rl; line-height:166px;}
+.accordion-space{margin:0.5rem 0;}
+
+
+.accordion-item .accordion-info-box{position:absolute; left:0; right:0; bottom:0px;}
+.accordion-item .accordion-info-box:before{
+	position:absolute; 
+	bottom:0px; left:0px; 
+	width:0; height:190px; 
+	background-color:#000; 
+	background-color:rgba(0,0,0,0.5);
+	content:""; 
+	-webkit-transition:all 0.4s;
+	-moz-transition:all 0.4s;
+	-o-transition:all 0.4s;
+	-ms-transition:all 0.4s;
+	transition:all 0.4s; 
+	z-index:1;
+}
+.accordion-item .accordion-info-box dl{
+	position:relative; z-index:1; 
+	padding:0 8.9rem 8.5rem; 
+	opacity:0;filter:Alpha(opacity=0); 
+	color:#fff; 
+	-webkit-transition-delay:0s; 
+	-moz-transition-delay:0s; 
+	-o-transition-delay:0s; 
+	-ms-transition-delay:0s; 
+	transition-delay:0s; 
+	z-index:1;
+}
+.accordion-item .accordion-info-box dl dt{margin-bottom:1.8rem;}
+.accordion-item .accordion-info-box dl dt span{font-size:2.25rem; line-height:1.3; letter-spacing:-0.052rem; color:var(--main-color); font-weight:500; font-style:italic;}
+.accordion-item .accordion-info-box dl dt .tit{font-size:4.55rem; line-height:1.1; letter-spacing:-0.036rem; color:#fff; font-weight:600;}
+.accordion-item .accordion-info-box dl .accordion-info-txt{position: relative; font-size:1.85rem; line-height:1.8; letter-spacing:-0.06rem; padding-left:20px;}
+.accordion-item .accordion-info-box dl .accordion-info-txt:before{position: absolute; content:'\e928'; font-family:'xeicon'; font-size:0.75em; color:#fff; top:0.4rem; left:0;}
+
+
+/* 아코디언 :: 타이틀 및 내용 Active */
+.accordion-item.active .accordion-inner:after{opacity:0;filter:Alpha(opacity=0); }
+.accordion-item.active .accordion-inner .accordion-tit{
+	opacity:0;filter:Alpha(opacity=0);
+	transition:all 0s;
+}
+.accordion-item.active .accordion-inner dl{ 
+	opacity:1.0;filter:Alpha(opacity=100);  
+	-webkit-transition:all 0.3s 0.2s; 
+	-moz-transition:all 0.3s 0.2s; 
+	-o-transition:all 0.3s 0.2s; 
+	-ms-transition:all 0.3s 0.2s; 
+	transition:all 0.3s 0.2s; 
+}
+
+/* Business :: 개발사업 - con03 */
+.develop-page .business-con.con03{background:no-repeat center; background-image:url('../images/business_develop_bottom_bg.jpg'); padding:14.8rem 0; background-size:cover;}
+.develop-bottom-slide-wrap li{display: flex !important; align-items:center;}
+.develop-bottom-slide-wrap li .img-box{width:57.95%;}
+.develop-bottom-slide-wrap li .img-box img{max-width:100%;}
+.develop-bottom-slide-wrap li .txt-box{width:42.05%; padding-left:12.3rem; box-sizing:border-box;}
+.develop-bottom-slide-wrap li .txt-box .tit{font-size:4.15rem; line-height:1.37; letter-spacing:-0.25px; color:#000; margin-bottom:2.1rem;}
+.develop-bottom-slide-wrap li .txt-box .sub-tit{display: block; font-size:2.4rem; line-height:1.38; letter-spacing:-0.05rem; color:#000; /* margin-bottom:3.8rem; */}
+.develop-bottom-slide-wrap li .txt-box .txt{font-size:1.85rem; line-height:1.73; letter-spacing:-0.064rem; opacity:0.7; color:#000; font-weight:300;}
+
+.develop-bottom-slide-wrap .slick-arrow{position: absolute; top:50%; display: block; width:8.9rem; height:8.9rem; -webkit-border-radius:50%;border-radius:50%; box-shadow: 7.8px 7.8px 13px 0 rgba(0, 0, 0, 0.11); border: solid 1px #ddd; background-color: #fff; z-index:9; font-size:2.95rem; color:#000; transition:all 0.3s;}
+.develop-bottom-slide-wrap .slick-arrow.slick-prev{left:-7.9rem; transform:translate(-100% , -50%);}
+.develop-bottom-slide-wrap .slick-arrow.slick-prev i{position: relative; transform:rotate(180deg); top:1px;}
+.develop-bottom-slide-wrap .slick-arrow.slick-next{right:-7.9rem; transform:translate(100% , -50%);}
+
+@media all and (min-width:801px){
+	.develop-bottom-slide-wrap .slick-arrow:hover{background:#856b54; color:#fff;}
+}
+
+
+/* ******************  Business :: 도시정비사업 ********************** */
+.city-page .business-con .banner-box{margin-bottom:2.2rem;}
+.city-page .business-con .banner-box span{background-image:url('../images/business_city_banner.jpg');}
+.city-page .develop-list-wrap li{width:100%; padding:6.8rem 0;}
+.city-page .develop-list-wrap li:last-child{border:none;}
+.city-page .develop-list-wrap li .img-box{width:26.9rem; left:auto; text-align:center;}
+.city-page .develop-list-wrap li .info-box{padding-left:26.9rem;}
+.city-page .business-con.con02{margin:auto;}
+.city-page .business-con.con02 .gray-box{background:#f3f3f3;}
+.city-bottom-con{display: flex; flex-wrap:wrap; justify-content:space-between; max-width:84rem; width:100%; margin:auto;}
+.city-bottom-con div{position: relative; width:47.6%;}
+.city-bottom-con div:before{position: absolute; content:''; width:1px; height:calc(100% + 2rem); background:#ddd; top:calc(100% + 1px); left:50%;}
+.city-bottom-con div.bd-no:before{display: none;}
+.city-bottom-con div.bd-long:before{height:calc(100% + 5rem);}
+.city-bottom-con div.bd-long2:before{height:calc(100% + 14rem);}
+.city-bottom-con .city-inner-item{display: table; table-layout:fixed; width:47.6%; text-align:center; font-size:1.7rem; line-height:1.88; letter-spacing:-0.045rem; color:#444; border:1px solid #eaeaea; padding:1.8rem 1rem; box-sizing:border-box; margin-bottom:2rem; background:#fff;}
+.city-bottom-con .city-inner-item p{display: table-cell; vertical-align:middle; width:100%;}
+.city-bottom-con .city-inner-item.mb-0{margin-bottom:0;}
+.city-bottom-con .city-inner-item.co-brown{background:#8b6e57; border-color:#8b6e57; color:#fff; font-size:1.8rem; font-weight:600; padding:2rem 1rem; margin-bottom:3rem;}
+.city-bottom-con .city-inner-item.co-brown span{color:#cab9ab; font-weight:400;}
+.city-bottom-con .city-inner-item.co-block{background:#323232; border-color:#323232; color:#fff; font-weight:500;}
+.plus-txt{font-size:1.5rem; line-height:2.13; letter-spacing:-0.015rem; color:#777;}
+
+/* ******************  Business :: 프로젝트컨설팅 ********************** */
+.consulting-page .business-con .banner-box span{background-image:url('../images/business_consulting_banner.jpg');}
+.business-con.con02{margin-bottom:23.5rem;}
+.consulting-icon-box{text-align:center; margin-bottom:9.5rem;}
+.consulting-icon-box .tit{font-size:2.65rem; letter-spacing:-0.025rem; letter-spacing:1.57; color:#333; margin-top:3rem; margin-bottom:2.5rem;}
+.consulting-icon-box .txt{font-size:2.1rem; letter-spacing:-0.06rem; line-height:1.52; color:#373737; font-weight:300;}
+.consulting-check-box{display: flex; justify-content:space-between; }
+.consulting-check-box .inner-box{width:49.09%; border:1rem solid #f8f8f8; box-sizing:border-box; padding:7.3rem;}
+.consulting-check-box .inner-box dl{position: relative;}
+.consulting-check-box .inner-box dt{position: absolute; top:50%; left:0; transform:translateY(-50%);}
+.consulting-check-box .inner-box dt .icon{display: block; width:35px; height:31px; background:no-repeat center; background-image:url('../images/business_consulting_check.png')}
+.consulting-check-box .inner-box dd{padding-left:6.65rem;}
+.consulting-check-box .inner-box dd .tit{font-size:2.35rem; line-height:1.53; color:#333;}
+.consulting-check-box .inner-box dd .txt{font-size:1.7rem; line-height:1.88; letter-spacing:-0.06rem; color:#777;  margin-top:1rem;}
+.area-1660 .gray-box{background:#f8f8f8; text-align:center; padding:13.5rem 1.5rem 8.3rem; margin-bottom:18.2rem;}
+.gray-box .custom-scrollbar-wrapper{margin-right:0;}
+@media (min-width:801px) and (max-width:1360px){
+	.business-con.con03 .mCSB_container{width:100% !important;}
+	.business-con.con03 .mCSB_container img{max-width:100%}
+	.business-con.con03 .mCSB_scrollTools.mCSB_scrollTools_horizontal{display: none !important;}
+}
+
+/* ******************  Business :: 라이프스타일 ********************** */
+.lifestyle-page .business-con .banner-box span{background-image:url('../images/business_lifestyle_banner.jpg');}
+.lifestyle-page .business-con.con02{margin-bottom:15.4rem;}
+.life-tit-box{text-align:center; margin-bottom:11.5rem;}
+.life-tit-box .tit{font-size:4.4rem; line-height:1.23; letter-spacing:-0.035rem; color:#373737; margin-bottom:3.6rem;}
+.life-tit-box .tit span{color:var(--main-color);}
+.life-tit-box .txt{font-size:2.15rem; line-height:1.65; letter-spacing:-0.04rem; color:#373737;}
+.life-list-wrap{display: flex; justify-content: center;}
+.life-list-wrap li{position: relative; text-align:center; width:33.02%; padding:0 2rem; box-sizing:border-box;}
+.life-list-wrap li:before{position: absolute; content:''; width:1px; height:100%; top:0; right:0; background:#ddd}
+.life-list-wrap li:last-child:before{display: none;}
+.life-list-wrap li span{display: inline-block; margin-bottom:3.9rem;}
+.life-list-wrap li dt{font-size:2.65rem; line-height:1.57; letter-spacing:-0.025rem; color:#333; font-weight:700; margin-bottom:2rem;}
+.life-list-wrap li dd{font-size:1.7rem; line-height:1.88; letter-spacing:-0.06rem; color:#777;}
+.lifestyle-page .business-con.con03{max-width:1600px; width:100%; margin:auto; background:no-repeat center; background-image:url('../images/business_life_bottom_bg.jpg'); text-align:center; padding:12rem 0 9.3rem; margin-bottom:15.6rem;}
+.lifestyle-page .mCS-dark.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar,
+.lifestyle-page .mCS-dark.mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar{background-color:rgba(255,255,255,0.75);}
+
+/* ******************  Business :: 신사업 ********************** */
+.new-business-page .business-con .banner-box span{background-image:url('../images/business_new-business_banner.jpg');}
+.new-business-page .business-con.con02{margin:16.9rem 0 25rem;}
+.new-business-slide-wrap li{display: flex !important; height:300px; justify-content: center; align-items: center;}
+.new-business-slide-wrap li img{width:100%;}
+
+/* ========================================================
+ * PORTFOLIO
+======================================================== */
+/* ******************  PORTFOLIO :: LIST ********************** */
+/* -------- PORTFOLIO :: 상단 -------- */
+.project-tab-container{margin-bottom:10rem}
+.project-tab-container ul{display:flex; justify-content:center; }
+.project-tab-container ul li {width:16.3rem; }
+.project-tab-container ul li a{position:relative; display:flex; justify-content:center; align-items:center; height:5.9rem; font-size:1.75rem; letter-spacing:-0.0502em; background-color: rgb(245, 244, 244, 0.5); color:rgba(59, 49, 39, 0.7); box-sizing:border-box;  }
+.project-tab-container ul li a:after{display:none; position:absolute; top:0px; left:-1px; right:-1px; height:2px; content:""; background-color:#4d4b48}
+.project-tab-container ul li.selected a{color:#4d4b48; background-color:#fff; border:1px solid #ddd; border-top:0;}
+.project-tab-container ul li.selected a:after{display:block;}
+
+/* -------- PORTFOLIO :: 리스트 -------- */
+.project-list-con{margin:0 -3rem;}
+.project-list-con .project-item{float:left; width:calc(33.33% - 6rem); margin:0 3rem 6rem}
+.project-list-con .project-item a{display:block;}
+.project-list-con .project-item .project-thum-box{position:relative; padding-top:130%; height:0; }
+.project-list-con .project-item .project-thum-box img{object-fit:cover;}
+.project-list-con .project-item .project-txt-con{display:flex; align-items:center; justify-content:space-between; padding-top:2.7rem; font-size:2.3rem; }
+.project-list-con .project-item .project-txt-con .project-tit{display:block; width:calc(100% - 5rem); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; color:#000; font-weight:600;}
+.project-list-con .project-item .project-txt-con .project-state{font-size:0.695em; letter-spacing:-0.025em;}
+.project-list-con .project-item .project-txt-con .project-state.ing{color:#906f52;}
+.project-list-con .project-item .project-txt-con .project-state.plan{color:#999999;}
+.project-list-con .project-item .project-txt-con .project-state.finish{color:#3b4d6b;}
+@media all and ( min-width: 801px ){
+	.project-list-con .project-item a .project-thum-box:after{position:absolute; top:50%; left:50%; transform:translate(-50%,-50%) scale(0.7); width:11rem; height:11rem; display:flex; align-items:center; justify-content:center; color:#bd8c56; font-size:1.6rem; content:"VIEW"; background-color:#000; border-radius:50%; transition:all 0.3s; opacity:0; }
+	.project-list-con .project-item a:hover .project-thum-box:after{opacity:1.0; transform:translate(-50%,-50%) scale(1);}
+}
+
+/* ******************  PORTFOLIO :: VIEW ********************** */
+#projectViewTopContent{margin-bottom:10rem;}
+.portfolio-top-prd-container{display:flex; align-items:center; justify-content:space-between; }
+.portfolio-photo-thumb{width:50%; max-width:534px; }
+.portfolio-photo-thumb .photo-thumb-inner{display:block; position:relative; padding-top:130%; height:0; }
+.portfolio-photo-thumb img{object-fit:cover;}
+.portfolio-info-con{width:50%; box-sizing:border-box; }
+.portfolio-info-con .portfolio-tit-con .project-state{display:block; font-size:1.8rem; letter-spacing:-0.04em; margin-bottom:1em; color:var(--sub-color1);}
+.portfolio-info-con .portfolio-tit-con .project-state.ing{color:#906f52;}
+.portfolio-info-con .portfolio-tit-con .project-state.plan{color:#999999;}
+.portfolio-info-con .portfolio-tit-con .project-state.finish{color:#3b4d6b;}
+.portfolio-info-con .portfolio-tit-con .name{display:block; font-size:4rem; color:#000; font-weight:700; letter-spacing:-0.04em; margin-bottom:3.2rem}
+.portfolio-info-con .portfolio-detail-con{font-size:1.7rem; color:#444; font-weight:400; letter-spacing:-0.035em; line-height:1.2; margin-bottom:7rem}
+.portfolio-info-con .portfolio-detail-con dl{margin-top:1.7rem;}
+.portfolio-info-con .portfolio-detail-con dl:first-child{margin-top:0;}
+.portfolio-info-con .portfolio-detail-con dl{display:flex; align-items:center;}
+.portfolio-info-con .portfolio-detail-con dl dt{width:8rem; font-weight:500;}
+.portfolio-info-con .portfolio-detail-con dl dd{width:calc(100% - 8rem); }
+.portfolio-info-con .cm-btn-controls{display:flex; align-items:center; padding-top:0} 
+.portfolio-info-con .cm-btn-controls a{width:190px; height:65px; line-height:65px;} 
+#projectViewBottomContent .project-view-detail-tit{font-size:3.3rem; color:#000; padding-bottom:0.84em; border-bottom:2px solid #000; margin-bottom:6rem;}
+
+/* ========================================================
+ * RECRUIT
+======================================================== */
+/* ******************  RECRUIT :: 인재상 ********************** */
+.talent-tit{text-align:center; font-size:5.6rem; line-height: 1.21; color:#373737; font-weight:400; margin-bottom:7.7rem; margin-bottom:1.375em; letter-spacing: -0.05em;}
+.talent-tit b{font-weight:700;}
+.talent-list-con ul{display:flex; flex-wrap:wrap; border-top:3px solid #272727;}
+.talent-list-con ul .talent-item{width:50%; display:flex; align-items:center; box-sizing:border-box; padding:8.5rem 3rem }
+.talent-list-con ul .talent-item:nth-child(1),
+.talent-list-con ul .talent-item:nth-child(2){border-bottom:1px solid #ddd;}
+.talent-list-con ul .talent-item .icon{display:block; width:8.7rem; height:8.7rem;}
+.talent-list-con ul .talent-item .icon img{max-width:100%;}
+.talent-list-con ul .talent-item dl{width:calc(100% - 14rem); margin-left:5rem;}
+.talent-list-con ul .talent-item dl dt{font-size:2.6rem; letter-spacing:-0.025em; color:#444444; font-weight:700;}
+.talent-list-con ul .talent-item dl dd{line-height:1.67; font-size:1.68rem; letter-spacing:-0.0625em; color:#777; margin-top:2.4rem}
+
+
+/* ========================================================
+ * NEWS
+======================================================== */
+.news-board-con{margin-bottom:10rem}
+/* ******************  NEWS :: LIST ********************** */
+.news-list-con{margin:0 -2.5rem}
+.news-list-con .news-item{float:left; width:calc(25% - 5rem); margin:0 2.5rem 7rem} 
+.news-item .news-item-inner,
+.news-item .news-item-inner *{transition:all 0.3s}
+.news-item .news-item-inner{display:block; position:relative; height:38.7rem; background-color:#fafafa; padding:5.3rem 1.8rem 6.5rem; box-sizing:border-box; }
+.news-item .news-item-inner .news-tit{position:relative; height:3.18em; font-size:2.2rem; letter-spacing:-0.05rem; font-weight:600; line-height:1.59; color:#111; margin-bottom:2rem; padding-right:2.5rem}
+.news-item .news-item-inner .news-tit .news-new-icon{position:absolute; bottom:-0.1em; right:2rem; font-size:1em; color:var(--main-color);}
+.news-item .news-item-inner .news-sub-txt{height:3.5em; font-size:1.6rem; letter-spacing:-0.05rem; line-height:1.75; color:#111; opacity:0.7; margin-bottom:10rem;}
+.news-item .news-item-inner .news-more-btn{display:inline-block; position:relative; font-size:1.35rem; letter-spacing:-0.1px; font-weight:600; color:#111; opacity:0.3; padding-left:1.6rem;}
+.news-item .news-item-inner .news-more-btn:before{position:absolute; left:0; top:50%; width:1.3rem; height:0.2rem; margin-top:-1px; content:""; background-color:#111; }
+.news-item.thumb-item .news-item-inner{padding-bottom:0;}
+.news-item.thumb-item .news-thumb{position:absolute; bottom:0px; left:0; right:0; height:20.2rem; }
+.news-item.thumb-item .news-thumb img{object-fit:cover;}
+
+@media all and ( min-width: 801px){
+	.news-item .news-item-inner:hover{background-color:#393534 !important; box-shadow:6px 10px 18px 0px rgba(0, 0, 0, 0.3);}
+	.news-item .news-item-inner:hover .news-tit,
+	.news-item .news-item-inner:hover .news-sub-txt,
+	.news-item .news-item-inner:hover .news-tit .news-new-icon{color:#fff;}
+	.news-item .news-item-inner:hover .news-more-btn{color:#fff; padding-left:2.2rem; opacity:1.0}
+	.news-item .news-item-inner:hover .news-more-btn:before{background-color:#fff;}
+}

@@ -1,0 +1,106 @@
+@charset "utf-8";
+/* *******************************************************
+ * filename : main_responsive.css
+ * description : 메인 레이아웃 및 컨텐츠 반응형 CSS
+ * date : 2022-06-08
+******************************************************** */
+
+/* ******************  메인 비주얼 ********************** */
+@media all and ( max-width: 1280px ){
+	/* 공통 :: 레이아웃 */
+	#fullpage .section:not(#mainVisual){height:auto !important;}
+	#fullpage .fp-section .fp-tableCell{height:auto !important;}
+	.main-visual-txt-con .main-visual-slogan{font-size:5rem}
+}
+@media all and ( max-width: 800px ){
+	/* 메인 비주얼 :: 이미지 */
+	.main-visual-item .main-visual-pc-img{display:none;}
+	.main-visual-item .main-visual-m-img{display:block;}
+	/* 메인 비주얼 :: 텍스트 */
+	.main-visual-txt-con{top:0;}
+	.main-visual-txt-box{height:100%; align-items:flex-start; text-align:right; padding-top:12.15rem}
+	.main-visual-txt-con .main-visual-slogan .middle-dot{display:block; font-size:0; margin:0}
+	.main-visual-txt-inner{width:100%; display:flex; flex-direction:column-reverse}
+	.main-visual-txt-con .main-visual-company-name{font-size:1.6rem; margin-bottom:0; margin-top:1.7rem}
+	.main-visual-slogan-rolling .main-visual-slogan-item{top:5rem !important;}
+}
+@media all and ( max-width: 480px ){
+	.main-visual-txt-con .main-visual-slogan{font-size:4rem}
+}
+
+/* ******************  메인 컨텐츠 ********************** */
+/* -------- 메인 컨텐츠 :: 공통 -------- */
+@media all and ( max-width: 800px ){
+	/* 공통 :: 타이틀 */
+	.main-tit-box .main-tit{font-size:3.2rem}
+	.main-tit-box .category{font-size:1.2rem}
+	.main-more-btn.mar-top{margin-top:0;}
+	.main-more-btn{font-size:1.1rem;}
+}
+
+/* -------- 메인 컨텐츠 :: 포트폴리오 리스트 -------- */
+@media all and ( max-width: 1280px ){
+	#mainProjectContent{padding:14rem 0 20rem}
+	/* 메인 포트폴리오 :: Swiper Controls */
+	.main-news-swiper-controls{position:absolute; bottom:-10rem;}
+	.main-project-rolling-list-con .project-item{width:20rem; padding-right:4rem}
+}
+@media all and ( max-width: 800px ){
+	#mainProjectContent{padding:7rem 0}
+	.main-project-container{display:block;}
+	.main-project-container .main-tit-box{position:relative; width:auto; padding-top:0; margin-bottom:4rem;}
+	.main-project-container .main-tit-box .main-more-btn{position:absolute; bottom:0px; right:0px;}
+	.main-project-container .main-project-list-con{width:100%}
+	.main-project-rolling-list-con .project-item{}
+	.main-project-container .main-project-rolling-wrapper{margin:0 calc(var(--area-padding) * -1); padding-left:var(--area-padding)}
+	/* 메인 포트폴리오 :: Swiper Controls */
+	.main-news-swiper-controls{display:none;}
+}
+
+/* -------- 메인 컨텐츠 :: 사업영역 리스트 -------- */
+@media all and ( max-width: 1280px ){
+	#mainBusinessContent{padding:14rem 0;}
+	#mainBusinessContent .dim-bg{width:100%; opacity:0.65}
+	.main-business-container{width:auto; margin-left:0}
+	.main-business-container .main-tit-box{text-align:left;}
+	.main-business-area{display:block; margin-top:4rem}
+	.main-business-list-con{width:100%}
+}
+@media all and ( max-width: 800px){
+	#mainBusinessContent{padding:7rem 0; }
+	.business-intro-item .business-item-inner{height:12.5rem;}
+	.business-intro-item .icon img{height:4rem}
+	.business-intro-item div.business-item-inner .icon img{height:5.4rem}
+	.business-intro-item .tit{font-size:1.2rem}
+}
+
+/* -------- 메인 컨텐츠 :: 뉴스 -------- */
+@media all and ( max-width: 1280px ){
+	#mainNewsContent{padding:14rem 0;}
+}
+@media all and ( max-width: 800px){
+	#mainNewsContent{padding:7rem 0;}
+	.main-news-container .main-tit-box{margin-bottom:4rem}
+	.main-news-list-controls button{font-size:1.8rem}
+	.main-news-list-controls .main-news-next-btn{margin-left:1.8rem}
+}
+
+/* -------- 메인 컨텐츠 :: 포트폴리오 리스트 -------- */
+@media all and ( max-width: 1580px){
+	.main-recruit-container .main-recruit-con{padding:0; margin:var(--area-padding)}
+	.main-recruit-con .main-recruit-link{padding:8.2rem 4rem}
+}
+@media all and ( max-width: 800px){
+	.main-recruit-container .main-recruit-con{margin:0;}
+	.main-recruit-container,
+	.main-contact-container{height:42.5vw}
+	.main-recruit-container{background:url(../images/main_recruit_bg_m.jpg) no-repeat 50% 50%; background-size:cover;}
+	.main-contact-container{background:url(../images/main_contact_bg_m.jpg) no-repeat 50% 50%; background-size:cover;}
+	.main-recruit-con{background-color:transparent;}
+	.main-recruit-con .main-recruit-link{display:flex; float:none; width:100%; height:100%; padding:0; align-items:center; justify-content:center; text-align:center;}
+	.main-recruit-con .main-recruit-link .main-more-btn{display:none;}
+	.main-recruit-con .main-recruit-bg{display:none;}
+	#mainRecruitContactContent .main-tit{font-size:2.5rem;}
+	.main-recruit-con .main-tit-box .recruit-main-txt,
+	.main-contact-inner p{font-size:1.1rem}
+}
